@@ -20,6 +20,7 @@ const API_KEY = "00d6fbb1214ed45546c6722bb7533af9"
 export function fetchRestaurants(lat=35.99, lon=-78.89) {
   const config = { headers: {'user-key': '00d6fbb1214ed45546c6722bb7533af9'} };
   const request = axios.get(`${ROOT_URL}/geocode?lat=${lat}&lon=${lon}`, config);
+  console.log(request);
   return {
     type: FETCH_RESTAURANTS,
     payload: request
