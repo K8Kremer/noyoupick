@@ -24,3 +24,11 @@ export function fetchRestaurants(lat=35.99, lon=-78.89) {
     payload: request
   };
 }
+
+export function fetchRestaurant(){
+  const request = axios.get(`https://api.foursquare.com/v2/venues/VENUE_ID`)
+  return {
+    type: FETCH_RESTAURANT,
+    payload: request
+  }
+}
