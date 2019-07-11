@@ -9,6 +9,8 @@ import promise from 'redux-promise';
 import VotePage from './components/VotePage';
 import FinalResult from './components/FinalResult';
 
+import 'bootstrap/dist/css/bootstrap.css'
+
 //const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
