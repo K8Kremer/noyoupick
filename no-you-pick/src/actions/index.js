@@ -43,7 +43,7 @@ export function fetchRestaurant(){
   };
 }
 
-export function deleteRestaurant() {
+export function deleteRestaurant(id) {
 
   return {
     type: DELETE_RESTAURANT,
