@@ -1,0 +1,14 @@
+
+.title {
+  text-align: center;
+  color: white;
+  line-height: 200px;
+
+ }
+
+.hero-image {
+  height: 200px;
+  background-image: url("https://image.freepik.com/free-photo/group-friends-eating-together_53876-9934.jpg");
+  background-position: center;
+  background-size: cover;
+}
