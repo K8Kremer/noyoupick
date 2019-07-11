@@ -1,7 +1,12 @@
 import React from 'react';
+import Title from './title';
+import RestaurantList from './RestaurantList';
 
 const VotePage = () => (
-  <div>votepage</div>
+  <div>
+  <Title />
+  <RestaurantList />
+  </div>
 );
 
 export default VotePage;
