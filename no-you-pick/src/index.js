@@ -9,12 +9,12 @@ import promise from 'redux-promise';
 import VotePage from './components/VotePage';
 import FinalResult from './components/FinalResult';
 
+
 import 'bootstrap/dist/css/bootstrap.css'
 
-//const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
-  //<Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <Switch>
         <Route exact path='/votePage' component={VotePage} />
@@ -22,6 +22,6 @@ ReactDOM.render(
         <Redirect from='/' to='/votePage' />
       </Switch>
     </BrowserRouter>
-  //</Provider>,
-  ,document.getElementById('root')
+  </Provider>,
+  document.getElementById('root')
 );

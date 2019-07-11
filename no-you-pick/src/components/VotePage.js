@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Title from './title';
 import RestaurantList from './RestaurantList';
+import { connect } from 'react-redux';
 import LocationButton from './LocationButton';
 
 class VotePage extends Component {
@@ -12,7 +13,7 @@ class VotePage extends Component {
     );
   }
 
-  render() {
+  render() { 
     return (
       <div>
         <Title />
@@ -22,9 +23,14 @@ class VotePage extends Component {
           <button className='btn btn-primary'>Find Restaurants</button>  
         </form> 
         <RestaurantList />
+        {this.props.testProp}
       </div>
     );
   }
 }
 
-export default VotePage;
+function mapStateToProps(state) {
+  return { testProp: state.restaurants.testProp };
+}
+
+export default connect(mapStateToProps, null)(VotePage);
