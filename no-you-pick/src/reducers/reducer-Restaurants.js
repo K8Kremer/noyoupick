@@ -7,7 +7,6 @@ export default function (state = defaultObject, action){
   switch (action.type) {
     case FETCH_RESTAURANTS:
     console.log(action.payload)
-    debugger;
       return _.mapKeys(action.payload.data.response.venues, "id");
     default:
       return state;
