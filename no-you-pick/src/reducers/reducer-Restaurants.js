@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { FETCH_RESTAURANTS, FETCH_RESTAURANT, DELETE_RESTAURANT } from "../actions";
 
-const defaultObject = {};
+const defaultObject = { testProp: 'hi' };
 
 export default function (state = defaultObject, action){
   switch (action.type) {
