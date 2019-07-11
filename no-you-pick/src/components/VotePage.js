@@ -45,7 +45,7 @@ class VotePage extends Component {
 }
 
 function mapStateToProps(state) {
-  return { testProp: state.restaurants.testProp };
+  return { ... state };
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchRestaurants }, dispatch);

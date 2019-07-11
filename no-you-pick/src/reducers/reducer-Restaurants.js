@@ -6,7 +6,9 @@ const defaultObject = {};
 export default function (state = defaultObject, action){
   switch (action.type) {
     case FETCH_RESTAURANTS:
-      return _.mapKeys(action.payload.nearby_restaurants, "id");
+    console.log(action.payload)
+    debugger;
+      return _.mapKeys(action.payload.data.response.venues, "id");
     default:
       return state;
   }
