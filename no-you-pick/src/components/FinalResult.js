@@ -1,7 +1,10 @@
 import React from 'react';
+import Title from './title';
 
 const FinalResult = () => (
-  <div>FinalResult</div>
+  <div>
+    <Title />
+  </div>
 );
 
 export default FinalResult;

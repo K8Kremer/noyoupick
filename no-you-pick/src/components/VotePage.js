@@ -1,7 +1,10 @@
 import React from 'react';
+import Title from './title';
 
 const VotePage = () => (
-  <div>votepage</div>
+  <div>
+  <Title />
+  </div>
 );
 
 export default VotePage;
