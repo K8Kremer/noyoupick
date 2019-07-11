@@ -5,9 +5,9 @@ import { fetchRestaurants } from "../actions";
 
 
 class RestaurantList extends Component {
-  componentDidMount() {
-    this.props.fetchRestaurants();
-  }
+  // componentDidMount() {
+  //   this.props.fetchRestaurants();
+  // }
 
   render() {
     return (
@@ -17,13 +17,14 @@ class RestaurantList extends Component {
     );
   }
 }
-
-function mapStateToProps(state) {
-  return { restaurants: state.restaurants };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchRestaurants }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantList);
+//
+// function mapStateToProps(state) {
+//   return { restaurants: state.restaurants };
+// }
+//
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ fetchRestaurants }, dispatch);
+// }
+//
+// export default connect(mapStateToProps, mapDispatchToProps)(RestaurantList);
+export default RestaurantList;
