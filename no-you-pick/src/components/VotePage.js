@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Title from './title';
 import RestaurantList from './RestaurantList';
+import LocationButton from './LocationButton';
 
 class VotePage extends Component {
   renderField() {
@@ -15,6 +16,7 @@ class VotePage extends Component {
     return (
       <div>
         <Title />
+        <LocationButton />
         <form>
           <input placeholder='Input number of people'></input>
           <button className='btn btn-primary'>Find Restaurants</button>  
