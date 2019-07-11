@@ -53,6 +53,13 @@ function validate(formValues) {
   }
 
   //add validation - if not number
+  if (isNaN(+formValues)){
+    errors.num = 'Not a valid number.';
+  }
+
+  if (formValues.num < 1) {
+    errors.num = 'Enter a number greater than 0.';
+  }
 
   return errors;
 }
