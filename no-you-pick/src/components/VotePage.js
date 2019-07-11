@@ -20,6 +20,7 @@ class VotePage extends Component {
   }
 }
 
+// TODO: don't pass all state, filter what is needed
 function mapStateToProps(state) {
   return {...state};
 }
