@@ -15,11 +15,11 @@ class VotePage extends Component {
     return (
       <div>
         <Title />
-        <RestaurantList />
         <form>
           <input placeholder='Input number of people'></input>
           <button className='btn btn-primary'>Find Restaurants</button>  
         </form> 
+        <RestaurantList />
       </div>
     );
   }
