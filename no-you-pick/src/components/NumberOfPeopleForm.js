@@ -31,7 +31,6 @@ class NumberOfPeopleForm extends Component {
     //pretty sure this is given to props by redux form
     const { handleSubmit } = this.props;
 
-    //are the two empty div.col intentional?
     return (
       <div className='row'>
         <div className='col'></div>
