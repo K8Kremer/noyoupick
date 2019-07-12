@@ -25,7 +25,6 @@ const COMBINED_URL = `${ROOT_URL}${CLIENT_ID}${CLIENT_SECRET}${VERSION}${CATEGOR
 
 // HARD CODED FOR TESTING DEFAULT TO DURHAM LON AND LAT
 export function fetchRestaurants(numVoters=1, lat=35.99, lon=-78.89) {
-  debugger;
   const LIMIT_SEARCH = `&limit=${+numVoters + 1}`
   const request = axios.get(`${COMBINED_URL}${LIMIT_SEARCH}&ll=${lat},${lon}`);
   console.log(request);

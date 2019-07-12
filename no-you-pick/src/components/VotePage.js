@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import LocationButton from './LocationButton';
 import { fetchRestaurants } from '../actions/index';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 class VotePage extends Component {
   render() {
@@ -15,6 +16,7 @@ class VotePage extends Component {
         <LocationButton />
         <NumberOfPeopleForm />
         <RestaurantList />
+        <Link to='/finalResult'>Final result</Link>
       </div>
     );
   }
