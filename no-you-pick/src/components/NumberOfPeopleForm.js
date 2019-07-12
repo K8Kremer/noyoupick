@@ -24,7 +24,6 @@ class NumberOfPeopleForm extends Component {
 
   onSubmit(value) {
     //need to add number of players through action
-    debugger;
     this.props.setVoters(value.num);
   }
 
@@ -53,12 +52,17 @@ function validate(formValues) {
   }
 
   //add validation - if not number
-  if (isNaN(+formValues)){
+  if (isNaN(+formValues.num)){
     errors.num = 'Not a valid number.';
   }
 
   if (formValues.num < 1) {
     errors.num = 'Enter a number greater than 0.';
+  }
+
+  //number starting with 0
+  if (formValues.num && formValues.num.charAt(0) === '0') {
+    errors.num = 'Cannot start with zero.';
   }
 
   return errors;

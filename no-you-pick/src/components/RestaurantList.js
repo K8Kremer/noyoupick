@@ -3,7 +3,7 @@ import _ from "lodash";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchRestaurants, getLocation } from "../actions";
-import Restaurant from './restaurant';
+import Restaurant from './Restaurant';
 
 class RestaurantList extends Component {
   componentDidMount() {
