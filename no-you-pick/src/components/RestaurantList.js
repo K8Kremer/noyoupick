@@ -14,18 +14,18 @@ class RestaurantList extends Component {
     console.log(this.props);
     return _.map(this.props.restaurants, restaurant =>{
       return (
-           <Restaurant key={restaurant.id} restaurant={restaurant}/>
-        );
+        <Restaurant key={restaurant.id} restaurant={restaurant}/>
+      );
     });
   }
 
   render() {
     return (
       <div>
-        <h3> Restaurants</h3>
-        <ul className = 'restaurant-list-group'>
-        {this.renderRestaurants()}
-        </ul>
+        <h2 style ={{
+          textAlign: 'center'
+        }}> Restaurants</h2>
+      <div>{this.renderRestaurants()}</div>
       </div>
     );
   }

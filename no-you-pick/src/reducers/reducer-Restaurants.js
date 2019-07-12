@@ -9,8 +9,7 @@ export default function (state = defaultObject, action){
     console.log(action.payload)
       return _.mapKeys(action.payload.data.response.venues, "id");
     case DELETE_RESTAURANT:
-      console.log(action.payload);
-      return state;
+      return _.omit(state, action.payload);
     // case SET_VOTERS:
     //   console.log(action.payload)
     //   return _.mapKeys(action.payload.data.response.venues, "id");
