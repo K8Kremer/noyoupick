@@ -1,5 +1,9 @@
 import React from 'react';
 
+//currently just renders 'We have your location' as we are using default Durham coordinates
+// when we implement getting coordinates, this will have a button that allows browser to ask for location
+// want to avoid browser asking for location on page load, bad ui
+
 const LocationButton = () => {
   //if store does not have location render button that sends action
   //to get location from browser
