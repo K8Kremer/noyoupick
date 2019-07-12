@@ -1,3 +1,4 @@
+import '../NumberOfPeopleForm.css';
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { bindActionCreators } from 'redux';
@@ -10,7 +11,7 @@ class NumberOfPeopleForm extends Component {
     const { meta: { touched, error } } = field;
     //ternary adds red coloring if there is an error
     const className = `form-group ${touched && error ? 'has-danger' : ''}`;
-  
+
     return (
       <div className={className}>
         <label>{field.label}</label>
@@ -33,14 +34,20 @@ class NumberOfPeopleForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
+    <div className='row'>
+    <div className='col'></div>
+    <div className='col-8'>
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))} >
-        <Field 
-          label='number of voters'
+        <Field
+          label='Number of Voters:'
           name='num'
           component={this.renderField}
         />
         <button type='submit' className='btn btn-primary'>Submit</button>
       </form>
+    </div>
+    <div className='col'></div>
+</div>
     );
   }
 }

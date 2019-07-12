@@ -22,10 +22,10 @@ class RestaurantList extends Component {
   render() {
     return (
       <div>
-        <h3> Restaurants</h3>
-        <ul className = 'restaurant-list-group'>
-        {this.renderRestaurants()}
-        </ul>
+        <h2 style ={{
+          textAlign: 'center'
+        }}> Restaurants</h2>
+      <div>{this.renderRestaurants()}</div>
       </div>
     );
   }
