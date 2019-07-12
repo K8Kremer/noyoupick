@@ -5,6 +5,7 @@ export const FETCH_RESTAURANT = "fetch_restaurant";
 export const GET_LOCATION = "get_location";
 export const DELETE_RESTAURANT = "delete_restaurant";
 export const SET_VOTERS = "set_voters";
+export const CHECK_ONE_LEFT = "check_one_left";
 
 const CLIENT_ID = "&client_id=AUGZLXPVOKAA0ZONPNCYDWLQBUL1FQLOF5NZWCBJXLQSUTET";
 const CLIENT_SECRET = "&client_secret=USTU1O2CLXSF11IG0UTDD2DJ1K10YHVXG3QXJVVUVQFJ5CTX";
@@ -27,17 +28,14 @@ const COMBINED_URL = `${ROOT_URL}${CLIENT_ID}${CLIENT_SECRET}${VERSION}${CATEGOR
 export function fetchRestaurants(numVoters=1, lat=35.99, lon=-78.89) {
   const LIMIT_SEARCH = `&limit=${+numVoters + 1}`
   const request = axios.get(`${COMBINED_URL}${LIMIT_SEARCH}&ll=${lat},${lon}`);
-  console.log(request);
   return {
     type: FETCH_RESTAURANTS,
     payload: request
   };
 }
 
-// HARD CODED PARLOUR VENUE_ID FOR NOW
 export function fetchRestaurant(){
   const request = axios.get(`https://api.foursquare.com/v2/venues/${CLIENT_ID}${CLIENT_SECRET}${VERSION}`)
-  console.log(request);
   return {
     type: FETCH_RESTAURANT,
     payload: request
@@ -48,6 +46,13 @@ export function deleteRestaurant(id) {
   return {
     type: DELETE_RESTAURANT,
     payload: id
+  };
+}
+
+export function checkOneLeft() {
+  return {
+    type: CHECK_ONE_LEFT,
+    payload: console.log("check one worked")
   }
 }
 
@@ -58,5 +63,5 @@ export function setVoters(lat=35.99, lon=-78.99) {
   return {
     type: SET_VOTERS,
     payload: request
-  }
+  };
 }
