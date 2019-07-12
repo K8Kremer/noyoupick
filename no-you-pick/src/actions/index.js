@@ -1,11 +1,7 @@
 import axios from "axios";
 
 export const FETCH_RESTAURANTS = "fetch_restaurants";
-export const FETCH_RESTAURANT = "fetch_restaurant";
-export const GET_LOCATION = "get_location";
 export const DELETE_RESTAURANT = "delete_restaurant";
-export const SET_VOTERS = "set_voters";
-export const CHECK_ONE_LEFT = "check_one_left";
 
 const CLIENT_ID = "&client_id=AUGZLXPVOKAA0ZONPNCYDWLQBUL1FQLOF5NZWCBJXLQSUTET";
 const CLIENT_SECRET = "&client_secret=USTU1O2CLXSF11IG0UTDD2DJ1K10YHVXG3QXJVVUVQFJ5CTX";
@@ -16,13 +12,6 @@ const ROOT_URL = 'https://api.foursquare.com/v2/venues/search?';
 
 
 const COMBINED_URL = `${ROOT_URL}${CLIENT_ID}${CLIENT_SECRET}${VERSION}${CATEGORY_ID}${RADIUS}`
-// export function getLocation() {
-//  const coords = ...TODO
-//   return {
-//     type: GET_LOCATION,
-//     payload: coords
-//   }
-// }
 
 // HARD CODED FOR TESTING DEFAULT TO DURHAM LON AND LAT
 export function fetchRestaurants(numVoters=1, lat=35.99, lon=-78.89) {
@@ -34,34 +23,9 @@ export function fetchRestaurants(numVoters=1, lat=35.99, lon=-78.89) {
   };
 }
 
-export function fetchRestaurant(){
-  const request = axios.get(`https://api.foursquare.com/v2/venues/${CLIENT_ID}${CLIENT_SECRET}${VERSION}`)
-  return {
-    type: FETCH_RESTAURANT,
-    payload: request
-  };
-}
-
 export function deleteRestaurant(id) {
   return {
     type: DELETE_RESTAURANT,
     payload: id
-  };
-}
-
-export function checkOneLeft() {
-  return {
-    type: CHECK_ONE_LEFT,
-    payload: console.log("check one worked")
-  }
-}
-
-// get the number of voters from the user input via the form and set
-// to limit api limit
-export function setVoters(lat=35.99, lon=-78.99) {
-  const request = axios.get(`${COMBINED_URL}&ll=${lat},${lon}`)
-  return {
-    type: SET_VOTERS,
-    payload: request
   };
 }

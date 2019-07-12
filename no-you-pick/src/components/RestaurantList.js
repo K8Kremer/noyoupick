@@ -11,7 +11,6 @@ class RestaurantList extends Component {
   }
 
   renderRestaurants(){
-    debugger;
     return _.map(this.props.restaurants, restaurant => {
       return (
         <Restaurant key={restaurant.id} restaurant={restaurant}/>
