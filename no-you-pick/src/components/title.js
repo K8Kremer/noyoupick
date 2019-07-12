@@ -5,6 +5,6 @@ const Title = () => (
   <div className='hero-image'>
     <h1 className='title'>No, You Pick!</h1>
   </div>
-)
+);
 
 export default Title;

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//need to import an action that sets number of players
 import { setVoters } from '../actions';
 
 class NumberOfPeopleForm extends Component {
@@ -24,7 +23,7 @@ class NumberOfPeopleForm extends Component {
   }
 
   onSubmit(value) {
-    //need to add number of players through action
+    //need to add number of players through action - done
     this.props.setVoters(value.num);
   }
 
@@ -33,20 +32,20 @@ class NumberOfPeopleForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-    <div className='row'>
-    <div className='col'></div>
-    <div className='col-8'>
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} >
-        <Field
-          label='Number of Voters:'
-          name='num'
-          component={this.renderField}
-        />
-        <button type='submit' className='btn btn-primary'>Submit</button>
-      </form>
-    </div>
-    <div className='col'></div>
-</div>
+      <div className='row'>
+        <div className='col'></div>
+        <div className='col-8'>
+          <form onSubmit={handleSubmit(this.onSubmit.bind(this))} >
+            <Field
+              label='Number of Voters:'
+              name='num'
+              component={this.renderField}
+            />
+            <button type='submit' className='btn btn-primary'>Submit</button>
+          </form>
+        </div>
+        <div className='col'></div>
+      </div>
     );
   }
 }
@@ -68,6 +67,7 @@ function validate(formValues) {
   }
 
   //number starting with 0
+  //need to check if formValues.num is undefined first or it gets mad
   if (formValues.num && formValues.num.charAt(0) === '0') {
     errors.num = 'Cannot start with zero.';
   }
