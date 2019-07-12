@@ -11,6 +11,10 @@ class RestaurantList extends Component {
   }
 
   renderRestaurants(){
+    if(this.props.restaurants === true){
+      console.log("boom!")
+      return <div><h1>Oops, something went wrong! Please try again later. </h1></div>
+    }
     return _.map(this.props.restaurants, restaurant => {
       return (
         <Restaurant key={restaurant.id} restaurant={restaurant}/>

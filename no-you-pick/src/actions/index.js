@@ -12,7 +12,6 @@ const ROOT_URL = 'https://api.foursquare.com/v2/venues/search?';
 
 
 const COMBINED_URL = `${ROOT_URL}${CLIENT_ID}${CLIENT_SECRET}${VERSION}${CATEGORY_ID}${RADIUS}`
-
 // HARD CODED FOR TESTING DEFAULT TO DURHAM LON AND LAT
 export function fetchRestaurants(numVoters=1, lat=35.99, lon=-78.89) {
   const LIMIT_SEARCH = `&limit=${+numVoters + 1}`
