@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { deleteRestaurant } from "../actions";
+import { deleteRestaurant, checkOneLeft } from "../actions";
 
 //QUESTION -
 // would it have been better to keep Restaurant as a pure function (not class) component
@@ -16,6 +16,7 @@ class Restaurant extends Component {
 
   handleDeleteClick() {
     this.props.deleteRestaurant(this.props.restaurant.id);
+    this.props.checkOneLeft();
   }
 
   render() {
@@ -37,7 +38,7 @@ class Restaurant extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ deleteRestaurant }, dispatch);
+  return bindActionCreators({ deleteRestaurant, checkOneLeft }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(Restaurant);

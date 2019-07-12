@@ -11,7 +11,7 @@ class RestaurantList extends Component {
   }
 
   renderRestaurants(){
-    console.log(this.props);
+    debugger;
     return _.map(this.props.restaurants, restaurant => {
       return (
         <Restaurant key={restaurant.id} restaurant={restaurant}/>
@@ -32,7 +32,7 @@ class RestaurantList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { restaurants: state.restaurants };
+  return { restaurants: state.restaurants};
 }
 
 function mapDispatchToProps(dispatch) {
