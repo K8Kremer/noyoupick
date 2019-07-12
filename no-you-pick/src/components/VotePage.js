@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
+import Title from './title';
+import RestaurantList from './RestaurantList';
+import NumberOfPeopleForm from './NumberOfPeopleForm';
+import { connect } from 'react-redux';
+import LocationButton from './LocationButton';
+import { fetchRestaurants } from '../actions/index';
+import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 class VotePage extends Component {
-  renderField() {
-    
-    //placeholder - here define how ReduxForm Field is implemented
-    return (
-      <div></div>  
-    );
-  }
-
   render() {
     return (
       <div>
-        <div>VotePage</div>
-        <form>
-          <input placeholder='Input number of people'></input>
-          <button className='btn btn-primary'>Find Restaurants</button>  
-        </form> 
+        <Title />
+        <LocationButton />
+        <NumberOfPeopleForm />
+        <RestaurantList />
+        <Link to='/finalResult'>Final result</Link>
       </div>
     );
   }
 }
 
-export default VotePage;
+//currently passing in all state to check redux store is working as intended
+// TODO: don't pass all state, filter what is needed
+function mapStateToProps(state) {
+  return {...state};
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchRestaurants }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VotePage);

@@ -11,10 +11,12 @@ import FinalResult from './components/FinalResult';
 
 import 'bootstrap/dist/css/bootstrap.css'
 
-//const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
+//instead of usual App component, just put a Switch directly in BrowserRouter
+//  since App would only contain the Switch and Routes
 ReactDOM.render(
-  //<Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <Switch>
         <Route exact path='/votePage' component={VotePage} />
@@ -22,6 +24,6 @@ ReactDOM.render(
         <Redirect from='/' to='/votePage' />
       </Switch>
     </BrowserRouter>
-  //</Provider>,
-  ,document.getElementById('root')
+  </Provider>,
+  document.getElementById('root')
 );
