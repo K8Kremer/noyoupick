@@ -12,7 +12,7 @@ class RestaurantList extends Component {
 
   renderRestaurants(){
     console.log(this.props);
-    return _.map(this.props.restaurants, restaurant =>{
+    return _.map(this.props.restaurants, restaurant => {
       return (
         <Restaurant key={restaurant.id} restaurant={restaurant}/>
       );
@@ -25,7 +25,7 @@ class RestaurantList extends Component {
         <h2 style ={{
           textAlign: 'center'
         }}> Restaurants</h2>
-      <div>{this.renderRestaurants()}</div>
+        <div>{this.renderRestaurants()}</div>
       </div>
     );
   }

@@ -20,6 +20,7 @@ class VotePage extends Component {
   }
 }
 
+//currently passing in all state to check redux store is working as intended
 // TODO: don't pass all state, filter what is needed
 function mapStateToProps(state) {
   return {...state};
