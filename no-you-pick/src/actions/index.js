@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const DELETE_RESTAURANT = "delete_restaurant";
+export const GET_LOCATION = "get_location";
 
 const CLIENT_ID = "&client_id=AUGZLXPVOKAA0ZONPNCYDWLQBUL1FQLOF5NZWCBJXLQSUTET";
 const CLIENT_SECRET = "&client_secret=USTU1O2CLXSF11IG0UTDD2DJ1K10YHVXG3QXJVVUVQFJ5CTX";
@@ -28,4 +29,11 @@ export function deleteRestaurant(id) {
     type: DELETE_RESTAURANT,
     payload: id
   };
+}
+
+export function getLocation(position) {
+  return {
+    type: GET_LOCATION,
+    payload: position
+  }
 }
