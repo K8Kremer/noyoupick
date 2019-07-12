@@ -22,7 +22,7 @@ class Restaurant extends Component {
     const { restaurant } = this.props;
 
     return (
-      <div className='card text-center'>
+      <div className='card shadow p-3 mb-5 bg-white rounded text-center'>
         <div className='card-body'>
           <h5 className='card-title'>{restaurant.name}</h5>
           <p className='card-text'>{restaurant.location.address}</p>
