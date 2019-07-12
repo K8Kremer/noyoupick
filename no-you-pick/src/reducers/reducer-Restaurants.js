@@ -8,6 +8,9 @@ export default function (state = defaultObject, action){
     case FETCH_RESTAURANTS:
     console.log(action.payload)
       return _.mapKeys(action.payload.data.response.venues, "id");
+    case DELETE_RESTAURANT:
+      console.log(action.payload);
+      return state;
     // case SET_VOTERS:
     //   console.log(action.payload)
     //   return {...state, numVoters: action.payload}
