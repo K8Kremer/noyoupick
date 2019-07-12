@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setVoters } from '../actions';
+import { setVoters, fetchRestaurants} from '../actions';
+
 
 class NumberOfPeopleForm extends Component {
   renderField(field) {
@@ -24,7 +25,8 @@ class NumberOfPeopleForm extends Component {
 
   onSubmit(value) {
     //need to add number of players through action - done
-    this.props.setVoters(value.num);
+    // this.props.setVoters(value.num);
+    this.props.fetchRestaurants(value.num);
   }
 
   render() {
@@ -76,7 +78,7 @@ function validate(formValues) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setVoters }, dispatch);
+  return bindActionCreators({ setVoters, fetchRestaurants }, dispatch);
 }
 
 const numVotersForm = reduxForm({

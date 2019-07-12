@@ -12,7 +12,9 @@ export default function (state = defaultObject, action){
       return _.omit(state, action.payload);
     // case SET_VOTERS:
     //   console.log(action.payload)
-    //   return {...state, numVoters: action.payload}
+    //   return _.mapKeys(action.payload.data.response.venues, "id");
+
+      // return {...state, numVoters: action.payload}
     // case FETCH_RESTAURANT:
     //   return {...state, {action.payload.data.response.venues.id}:}
     // case DELETE_RESTAURANT:

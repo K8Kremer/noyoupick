@@ -12,10 +12,7 @@ const VERSION = '&v=20190711';
 const RADIUS = '&radius=12874.8';
 const CATEGORY_ID = '&categoryId=4d4b7105d754a06374d81259';
 const ROOT_URL = 'https://api.foursquare.com/v2/venues/search?';
-// HARD CODED PARLOUR VENUE_ID FOR NOW
-const VENUE_ID = '515cc981e4b0d533bbfbab35';
-const NUM_VOTERS = "num_voters";
-const LIMIT_SEARCH = `limit=${NUM_VOTERS}`;
+
 
 const COMBINED_URL = `${ROOT_URL}${CLIENT_ID}${CLIENT_SECRET}${VERSION}${CATEGORY_ID}${RADIUS}`
 // export function getLocation() {
@@ -27,8 +24,10 @@ const COMBINED_URL = `${ROOT_URL}${CLIENT_ID}${CLIENT_SECRET}${VERSION}${CATEGOR
 // }
 
 // HARD CODED FOR TESTING DEFAULT TO DURHAM LON AND LAT
-export function fetchRestaurants(lat=35.99, lon=-78.89) {
-  const request = axios.get(`${COMBINED_URL}&ll=${lat},${lon}`);
+export function fetchRestaurants(numVoters=1, lat=35.99, lon=-78.89) {
+  debugger;
+  const LIMIT_SEARCH = `&limit=${+numVoters + 1}`
+  const request = axios.get(`${COMBINED_URL}${LIMIT_SEARCH}&ll=${lat},${lon}`);
   console.log(request);
   return {
     type: FETCH_RESTAURANTS,
@@ -38,7 +37,7 @@ export function fetchRestaurants(lat=35.99, lon=-78.89) {
 
 // HARD CODED PARLOUR VENUE_ID FOR NOW
 export function fetchRestaurant(){
-  const request = axios.get(`https://api.foursquare.com/v2/venues/${CLIENT_ID}${CLIENT_SECRET}${VERSION}${VENUE_ID}`)
+  const request = axios.get(`https://api.foursquare.com/v2/venues/${CLIENT_ID}${CLIENT_SECRET}${VERSION}`)
   console.log(request);
   return {
     type: FETCH_RESTAURANT,
@@ -55,8 +54,8 @@ export function deleteRestaurant(id) {
 
 // get the number of voters from the user input via the form and set
 // to limit api limit
-export function setVoters(lat, lon) {
-  const request = axios.get(`${COMBINED_URL}&ll=${lat},${lon}${LIMIT_SEARCH}`)
+export function setVoters(lat=35.99, lon=-78.99) {
+  const request = axios.get(`${COMBINED_URL}&ll=${lat},${lon}`)
   return {
     type: SET_VOTERS,
     payload: request
