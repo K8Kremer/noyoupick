@@ -6,10 +6,16 @@ import { connect } from 'react-redux';
 import LocationButton from './LocationButton';
 import { fetchRestaurants } from '../actions/index';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class VotePage extends Component {
+
   render() {
+    if (Object.keys(this.props.restaurants).length === 1){
+      return (
+        <Redirect from="/votePage" to="/finalResult" />
+      )
+    }
     return (
       <div>
         <Title />

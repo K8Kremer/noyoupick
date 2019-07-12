@@ -6,9 +6,6 @@ export default function (state = {}, action){
     case FETCH_RESTAURANTS:
       return _.mapKeys(action.payload.data.response.venues, "id");
     case DELETE_RESTAURANT:
-      if (Object.keys(state).length == 2){
-        console.log('One LEFTTTTT!')
-      }
       return _.omit(state, action.payload);
     default:
       return state;

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setVoters, fetchRestaurants} from '../actions';
+import { fetchRestaurants} from '../actions';
 
 
 class NumberOfPeopleForm extends Component {
@@ -78,7 +78,7 @@ function validate(formValues) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setVoters, fetchRestaurants }, dispatch);
+  return bindActionCreators({ fetchRestaurants }, dispatch);
 }
 
 const numVotersForm = reduxForm({
