@@ -11,7 +11,10 @@ class RestaurantList extends Component {
   }
 
   renderRestaurants(){
-    console.log(this.props);
+    if(this.props.restaurants === true){
+      console.log("boom!")
+      return <div><h1>Oops, something went wrong! Please try again later. </h1></div>
+    }
     return _.map(this.props.restaurants, restaurant => {
       return (
         <Restaurant key={restaurant.id} restaurant={restaurant}/>
@@ -32,7 +35,7 @@ class RestaurantList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { restaurants: state.restaurants };
+  return { restaurants: state.restaurants};
 }
 
 function mapDispatchToProps(dispatch) {
